@@ -1,0 +1,26 @@
+{
+  "name": "sgpsychiatry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meallycooperation-dotcom/sgpsychiatry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/meallycooperation-dotcom/sgpsychiatry/issues"
+  },
+  "homepage": "https://github.com/meallycooperation-dotcom/sgpsychiatry#readme",
+  "dependencies": {
+    "axios": "^1.18.1",
+    "dotenv": "^17.4.2"
+  }
+}
