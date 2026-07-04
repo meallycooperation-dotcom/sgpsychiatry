@@ -86,8 +86,8 @@
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: #1a6a86;
-      border-bottom-color: #2890b5;
+      color: #f4c542;
+      border-bottom-color: #f4c542;
     }
 
     .nav-links .btn-portal {
