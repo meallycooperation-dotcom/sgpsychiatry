@@ -1,0 +1,12 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "n": "wwLHMPUdvMrvXDerVS55Npp54cd8qjjLpjD2vXWLdZ9jq3UbovMCbq5E1o15qDmtarW8cR9rr15Elxf91uW-HZnn2JeaDuoWZAxsIdrrqf35FkcV8xGlzp2AulEZtEjg8qxuhHS1aZPQ-JqiMW55Ah77V0H79naErjykrYdFGEBDJImbZQ9MipicywKOl--O90QDVk_JkqDvrz4WIpWjVwmJAGatGpJgBIMi_N49Gz6Qy5h61Ul1G991jYPJbVsxiJzt0nvPApTgCVz-T2gBqY62Xn8Heem2qGxGI5xnXj_8eC7muMqBDNYxImi4QvpcJYbtoc__7mJm1gVWiF4S0Q",
+      "e": "AQAB",
+      "use": "sig",
+      "alg": "RS256",
+      "kid": "sgpsychiatry-key-1"
+    }
+  ]
+}
