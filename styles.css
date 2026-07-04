@@ -56,7 +56,7 @@
 
     .logo h1 {
       font-weight: 600;
-      font-size: 1.8rem;
+      font-size: 2.9rem;
       letter-spacing: -0.5px;
       color: #103542;
     }
@@ -161,7 +161,7 @@
     }
 
     .hero-content h2 {
-      font-size: 2.9rem;
+      font-size: 1.8rem;
       font-weight: 600;
       line-height: 1.2;
       color: #0d2e3d;
@@ -266,8 +266,7 @@
       color: #235a72;
       font-size: 1.05rem;
       margin-bottom: 32px;
-      border-left: 5px solid #2a7b9e50;
-      padding-left: 20px;
+      padding-left: 0;
     }
 
     /* ----- CARDS (services, conditions) ----- */
@@ -404,7 +403,7 @@
     }
 
     .financial-img {
-      background-image: url("insu.jpg");
+      background-image: url("image.png");
     }
 
     .process-img {
