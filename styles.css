@@ -235,7 +235,6 @@
       min-height: 200px;
       border-radius: 40px 40px 40px 4px;
       background: #b8d3e3;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260"><circle cx="140" cy="120" r="44" fill="%232b7b9e30"/><circle cx="280" cy="80" r="34" fill="%231f6f8f25"/><circle cx="330" cy="180" r="30" fill="%232a6f8f25"/><path d="M40 210 L370 210 L350 250 L60 250 Z" fill="%231a5f7a20"/><path d="M120 150 L200 100 L280 150 L240 210 L160 210 L120 150" fill="%233f8bb040"/><circle cx="170" cy="140" r="14" fill="%23ffffff70"/><circle cx="220" cy="160" r="10" fill="%23ffffff50"/></svg>');
       background-size: cover;
       background-position: center;
       min-height: 220px;
