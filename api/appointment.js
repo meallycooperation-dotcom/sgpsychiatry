@@ -1,5 +1,5 @@
-const OpenEMR = require('./lib/openemr');
-const { parseJson } = require('./lib/response');
+const OpenEMR = require('../lib/openemr');
+const { parseJson } = require('../lib/response');
 
 async function getAppointments(client) {
   const res = await client.request('/api/appointments');

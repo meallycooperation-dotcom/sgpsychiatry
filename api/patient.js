@@ -1,4 +1,4 @@
-const { parseJson } = require('./lib/response');
+const { parseJson } = require('../lib/response');
 
 async function getPatient(client, patientId) {
   const res = await client.request(`/api/patients/${patientId}`);
