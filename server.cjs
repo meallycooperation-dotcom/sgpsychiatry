@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config({ path: '.env.local' });
-const config = require('./lib/openemr');
+const config = require('./sgpsychiatry/lib/openemr');
 
 const app = express();
 const PORT = 3000;
@@ -19,14 +19,14 @@ app.use(session({
 }));
 
 // API Routes
-const oauth = require('./api/oauth');
-const callback = require('./api/callback');
-const { performLogin } = require('./api/login');
-const { getDoctors } = require('./api/doctors');
-const { getPatient, createPatient } = require('./api/patient');
-const { getAppointments, createAppointment } = require('./api/appointment');
-const dashboard = require('./api/dashboard');
-const health = require('./api/health');
+const oauth = require('./sgpsychiatry/api/oauth');
+const callback = require('./sgpsychiatry/api/callback');
+const { performLogin } = require('./sgpsychiatry/api/login');
+const { getDoctors } = require('./sgpsychiatry/api/doctors');
+const { getPatient, createPatient } = require('./sgpsychiatry/api/patient');
+const { getAppointments, createAppointment } = require('./sgpsychiatry/api/appointment');
+const dashboard = require('./sgpsychiatry/api/dashboard');
+const health = require('./sgpsychiatry/api/health');
 
 app.get('/api/oauth', oauth);
 app.get('/api/callback', callback);
