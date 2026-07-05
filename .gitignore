@@ -1,2 +1,7 @@
 .vercel
 .env*
+jwks.json
+keys/
+*.pem
+*.key
+node_modules/
