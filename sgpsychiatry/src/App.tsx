@@ -17,7 +17,7 @@ import {
 } from 'lucide-react'
 import consultingImage from './assets/doc1.jpg'
 import heroImage from './assets/images.jpg'
-import financialImage from './assets/image.png'
+import financialImage from './assets/image_converted.webp'
 import processImage from './assets/hero.png'
 import Login from './Login'
 import Profile from './pages/dashboard/Profile/index'
