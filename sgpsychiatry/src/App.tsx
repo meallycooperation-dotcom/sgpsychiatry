@@ -327,9 +327,9 @@ function App() {
             <img
               src={heroImage}
               alt=""
-              className="h-full w-full object-cover opacity-20 mix-blend-multiply"
+              className="h-full w-full object-cover opacity-5 mix-blend-multiply"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-sky-100/90 via-sky-50/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-sky-100/25 via-sky-50/10 to-transparent" />
           </div>
 
           <div className="relative mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
@@ -353,7 +353,7 @@ function App() {
                   Patient Portal
                 </a>
                 <a
-                  href="#contact"
+                  href="tel:+12538789211"
                   className="inline-flex items-center gap-2 rounded-full border border-sky-700 px-6 py-3 font-semibold text-sky-800 transition hover:bg-sky-700 hover:text-white"
                 >
                   <PhoneCall className="h-5 w-5" />
