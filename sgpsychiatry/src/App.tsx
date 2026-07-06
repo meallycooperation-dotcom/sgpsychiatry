@@ -1,4 +1,4 @@
-import { type MouseEvent } from 'react'
+import { useEffect, type MouseEvent } from 'react'
 import {
   Brain,
   CalendarCheck2,
@@ -17,7 +17,7 @@ import {
 } from 'lucide-react'
 import consultingImage from './assets/doc1.jpg'
 import heroImage from './assets/images.jpg'
-import financialImage from './assets/insu.jpg'
+import financialImage from './assets/image.png'
 import processImage from './assets/hero.png'
 import Login from './Login'
 import Profile from './pages/dashboard/Profile/index'
@@ -28,6 +28,24 @@ import MedicalRecords from './pages/dashboard/MedicalRecords/index'
 import MessagesPage from './pages/dashboard/Messages/index'
 import Prescriptions from './pages/dashboard/Prescriptions/index'
 import Settings from './pages/dashboard/Settings/index'
+
+const medicalConditions = [
+  'Anxiety disorders',
+  'Depression',
+  'Bipolar disorder',
+  'Schizophrenia',
+  'PTSD and trauma-related disorders',
+  'ADHD',
+  'Sleep and stress-related concerns',
+]
+
+const seoData = {
+  title: 'SGPsychiatry | Adult Psychiatry & Wellness in Lakewood, WA',
+  description:
+    'Compassionate psychiatric care in Lakewood, WA for anxiety, depression, bipolar disorder, schizophrenia, PTSD, trauma, ADHD, and more through in-person and telepsychiatry visits.',
+  keywords:
+    'psychiatry Lakewood WA, anxiety treatment, depression treatment, bipolar disorder care, schizophrenia treatment, trauma therapy, telepsychiatry',
+}
 
 const services = [
   {
@@ -55,7 +73,7 @@ const contactItems = [
   { icon: PhoneCall, text: '(253) 878-9211' },
   { icon: Mail, text: 'info@sgpsychiatry.com' },
   { icon: Clock3, text: 'Monday - Thursday\n9:00 am to 5:00 pm' },
-  { icon: Video, text: 'Telepsychiatry available' },
+  { icon: Video, text: 'Telehealth available' },
 ]
 
 const getLoginHref = () => {
@@ -100,6 +118,74 @@ const getPortalProfile = () => {
 
 function App() {
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '/'
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+
+    const head = document.head
+    document.title = seoData.title
+
+    const setMeta = (attr: 'name' | 'property', key: string, content: string) => {
+      let tag = head.querySelector(`meta[${attr}="${key}"]`)
+      if (!tag) {
+        tag = document.createElement('meta')
+        tag.setAttribute(attr, key)
+        head.appendChild(tag)
+      }
+      tag.setAttribute('content', content)
+    }
+
+    setMeta('name', 'description', seoData.description)
+    setMeta('name', 'keywords', seoData.keywords)
+    setMeta('name', 'robots', 'index,follow,max-image-preview:large')
+    setMeta('property', 'og:title', seoData.title)
+    setMeta('property', 'og:description', seoData.description)
+    setMeta('property', 'og:type', 'website')
+    setMeta('property', 'og:url', typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : '/')
+    setMeta('name', 'twitter:card', 'summary_large_image')
+    setMeta('name', 'twitter:title', seoData.title)
+    setMeta('name', 'twitter:description', seoData.description)
+
+    let canonical = head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+    if (!canonical) {
+      canonical = document.createElement('link')
+      canonical.rel = 'canonical'
+      head.appendChild(canonical)
+    }
+    canonical.href = typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : '/'
+
+    let existingSchema = document.getElementById('sgpsychiatry-schema') as HTMLScriptElement | null
+    if (!existingSchema) {
+      existingSchema = document.createElement('script')
+      existingSchema.id = 'sgpsychiatry-schema'
+      existingSchema.type = 'application/ld+json'
+      head.appendChild(existingSchema)
+    }
+
+    existingSchema.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'MedicalOrganization',
+      name: 'SGPsychiatry',
+      url: 'https://sgpsychiatry.com',
+      telephone: '+12538789211',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '6212 75th St W',
+        addressLocality: 'Lakewood',
+        addressRegion: 'WA',
+        postalCode: '98499',
+        addressCountry: 'US',
+      },
+      medicalSpecialty: 'Psychiatry',
+      description:
+        'Adult psychiatry and wellness clinic providing treatment for anxiety, depression, bipolar disorder, schizophrenia, PTSD, trauma, ADHD, and other mental health conditions.',
+      availableService: medicalConditions.map((condition) => ({
+        '@type': 'MedicalTherapy',
+        name: condition,
+      })),
+      sameAs: ['https://www.facebook.com', 'https://www.instagram.com'],
+    })
+  }, [pathname])
 
   if (pathname === '/profile') {
     return <Profile />
@@ -311,8 +397,11 @@ function App() {
             <a href="#about" className="transition hover:text-sky-700">
               About
             </a>
+            <a href="#treatment" className="transition hover:text-sky-700">
+              Treatment
+            </a>
             <a href="#services" className="transition hover:text-sky-700">
-              Treatment Services
+              Services
             </a>
             <a href="#contact" className="transition hover:text-sky-700">
               Contacts
@@ -326,7 +415,7 @@ function App() {
           <div className="absolute inset-0">
             <img
               src={heroImage}
-              alt=""
+              alt="Psychiatry clinic in Lakewood, Washington"
               className="h-full w-full object-cover opacity-5 mix-blend-multiply"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-sky-100/25 via-sky-50/10 to-transparent" />
@@ -337,11 +426,11 @@ function App() {
               <span className="mb-5 inline-flex rounded-full border border-sky-400/40 bg-white/70 px-4 py-2 text-sm font-semibold text-sky-800 shadow-sm">
                 Compassionate, evidence-based care
               </span>
-              <h2 className="mb-5 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
+              <h1 className="mb-5 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
                 Adult Psychiatry & Wellness
-              </h2>
+              </h1>
               <p className="mb-8 max-w-xl text-lg leading-8 text-slate-700">
-                Compassionate, evidence-based mental health care for adults. In-person and telepsychiatry services designed around your needs.
+                Compassionate, evidence-based mental health care for adults in Lakewood, WA. We provide treatment for anxiety, depression, bipolar disorder, schizophrenia, PTSD, trauma, ADHD, and related mental health concerns through in-person and telepsychiatry care.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -370,34 +459,39 @@ function App() {
             <div className="mb-8">
               <h2 className="text-3xl font-semibold text-slate-900">About</h2>
               <p className="mt-4 max-w-4xl text-lg leading-8 text-slate-700">
-                Dr. Sammy Gathiru, DNP is a Board-Certified Psychiatric Mental Health Nurse Practitioner who provides a comprehensive approach to mental health treatment by incorporating psychopharmacology, psychotherapy, and alternative treatment modalities to best address your concern. Each treatment plan is tailored to fit the individual and to help clients understand their diagnosis and options.
+                Dr. Sammy Gathiru, DNP, PMHNP is a Board-Certified Psychiatric Mental Health Nurse Practitioner who provides a comprehensive approach to mental health treatment by incorporating psychopharmacology, psychotherapy, and alternative treatment modalities to best address your concern. Each treatment plan is tailored to fit the individual and to help clients understand their diagnosis and options.
               </p>
             </div>
 
-            <div className="mb-10">
-              <h3 className="text-2xl font-semibold text-slate-900">Psychiatric Services</h3>
-              <p className="mt-3 text-lg text-slate-600">
+            <div id="treatment">
+              <h3 className="text-3xl font-semibold text-slate-900">Treatment</h3>
+              <p className="mt-3 text-lg leading-8 text-slate-700">
                 Personalized care that may include therapy, medication management, and telepsychiatry.
               </p>
-            </div>
-
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-              <p className="text-lg leading-8 text-slate-700">
-                <span className="font-semibold text-slate-900">Treatment:</span> Our team is invested in helping you achieve your mental wellness goals. We treat psychiatric disorders not limited to mood, anxiety, depression, bipolar, and trauma-related disorders. We use psychodynamic and cognitive-behavioral therapy, along with other evidence-based modalities, and are trained to treat clients of all ages.
+              <p className="mt-4 text-lg leading-8 text-slate-700">
+                Our team is invested in helping you achieve your mental wellness goals. We treat psychiatric disorders not limited to mood, anxiety, depression, bipolar, and trauma-related disorders. We use psychodynamic and cognitive-behavioral therapy, along with other evidence-based modalities, and are trained to treat clients of all ages.
               </p>
             </div>
           </div>
         </section>
 
+        
+
         <section id="services" className="pb-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mb-8">
+              <h3 className="text-3xl font-semibold text-slate-900">Services</h3>
+              <p className="mt-3 max-w-3xl text-lg text-slate-600">
+              We provide compassionate, personalized psychiatric care tailored to each individual's needs. Our services include psychiatric evaluations, diagnosis, medication management, psychotherapy, and evidence-based treatment for a wide range of mental health conditions. We offer both in-person and secure telehealth appointments, with a focus on improving emotional well-being, daily functioning, and overall quality of life through patient-centered care.
+              </p>
+            </div>
             <div className="grid gap-6 lg:grid-cols-3">
               {services.map((service) => (
                 <article
                   key={service.title}
                   className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <img src={service.image} alt={service.title} className="h-48 w-full object-cover" />
+                  <img src={service.image} alt={`${service.title} services for mental health treatment`} className="h-48 w-full object-cover" />
                   <div className="p-6">
                     <h3 className="text-xl font-semibold text-slate-900">{service.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-slate-600">{service.description}</p>
@@ -452,15 +546,14 @@ function App() {
 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
-                    href={getLoginHref()}
-                    onClick={handleLoginClick}
+                    href="http://localhost:3001/login"
                     className="inline-flex items-center gap-2 rounded-full bg-sky-700 px-6 py-3 font-semibold text-white transition hover:bg-sky-800"
                   >
                     <CalendarCheck2 className="h-5 w-5" />
                     Schedule via Portal
                   </a>
                   <a
-                    href="#"
+                    href="http://localhost:3001/#"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 font-semibold text-slate-700 transition hover:border-sky-700 hover:text-sky-700"
                   >
                     <FileSignature className="h-5 w-5" />
@@ -550,7 +643,7 @@ function App() {
           <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-400">
             <a href="#" className="transition hover:text-sky-400">Privacy Policy</a>
             <a href="#" className="transition hover:text-sky-400">HIPAA Notice</a>
-            <a href="#" className="transition hover:text-sky-400">Telepsychiatry</a>
+            <a href="#" className="transition hover:text-sky-400">Telehealth</a>
             <a href="#" className="transition hover:text-sky-400">Insurance & Fees</a>
           </div>
           <p className="mt-6 text-sm text-slate-500">© 2026 sgpsychiatry.com | All Rights Reserved</p>
