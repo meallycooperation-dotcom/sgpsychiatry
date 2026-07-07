@@ -430,7 +430,7 @@ function App() {
                 Adult Psychiatry & Wellness
               </h1>
               <p className="mb-8 max-w-xl text-lg leading-8 text-slate-700">
-                Compassionate, evidence-based mental health care for adults in Lakewood, WA. We provide treatment for anxiety, depression, bipolar disorder, schizophrenia, PTSD, trauma, ADHD, and related mental health concerns through in-person and telepsychiatry care.
+                Compassionate, evidence-based mental health care for adults. We provide treatment for anxiety, depression, bipolar disorder, schizophrenia, PTSD, trauma, ADHD, and related mental health concerns through in-person and telepsychiatry care.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
