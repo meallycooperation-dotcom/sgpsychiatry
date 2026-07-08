@@ -634,28 +634,28 @@ function App() {
               </span>
               <div>
                 <p className="font-semibold text-white">SGPsychiatry</p>
-                <p className="text-sm text-slate-400">Adult Psychiatry & Wellness</p>
+                <p className="text-sm text-slate-300">Adult Psychiatry & Wellness</p>
               </div>
             </div>
             <div className="flex gap-3">
-              <a href="#" className="rounded-full border border-slate-700 p-3 transition hover:border-sky-500 hover:text-sky-400">
-                <Link2 className="h-5 w-5" />
+              <a href="https://sgpsychiatry.com" aria-label="Visit the SGPsychiatry website" className="rounded-full border border-slate-700 p-3 transition hover:border-sky-500 hover:text-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
+                <Link2 className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="#" className="rounded-full border border-slate-700 p-3 transition hover:border-sky-500 hover:text-sky-400">
-                <Mail className="h-5 w-5" />
+              <a href="mailto:info@sgpsychiatry.com" aria-label="Email SGPsychiatry" className="rounded-full border border-slate-700 p-3 transition hover:border-sky-500 hover:text-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
+                <Mail className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="#" className="rounded-full border border-slate-700 p-3 transition hover:border-sky-500 hover:text-sky-400">
-                <PhoneCall className="h-5 w-5" />
+              <a href="tel:+12538789211" aria-label="Call SGPsychiatry" className="rounded-full border border-slate-700 p-3 transition hover:border-sky-500 hover:text-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
+                <PhoneCall className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
           </div>
-          <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-400">
+          <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-300">
             <a href="#" className="transition hover:text-sky-400">Privacy Policy</a>
             <a href="#" className="transition hover:text-sky-400">HIPAA Notice</a>
             <a href="#" className="transition hover:text-sky-400">Telehealth</a>
             <a href="#" className="transition hover:text-sky-400">Insurance & Fees</a>
           </div>
-          <p className="mt-6 text-sm text-slate-500">© 2026 sgpsychiatry.com | All Rights Reserved</p>
+          <p className="mt-6 text-sm text-slate-300">© 2026 sgpsychiatry.com | All Rights Reserved</p>
         </div>
       </footer>
     </div>
