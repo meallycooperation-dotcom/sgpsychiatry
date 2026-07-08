@@ -97,6 +97,12 @@ const handleLogoutClick = (event: MouseEvent<HTMLAnchorElement>) => {
   window.location.assign('/')
 }
 
+const handleContactLinkClick = (event: MouseEvent<HTMLAnchorElement>, href?: string) => {
+  if (!href) return
+  event.preventDefault()
+  window.location.href = href
+}
+
 const isPortalView = typeof window !== 'undefined' && (window.location.pathname === '/portal' || new URLSearchParams(window.location.search).get('auth') === 'success')
 
 const getPortalProfile = () => {
@@ -439,7 +445,7 @@ function App() {
                   className="inline-flex items-center gap-2 rounded-full bg-sky-700 px-6 py-3 font-semibold text-white shadow-lg shadow-sky-700/20 transition hover:bg-sky-800"
                 >
                   <LogIn className="h-5 w-5" />
-                  login Portal
+                  Login Portal
                 </a>
               </div>
             </div>
@@ -532,7 +538,11 @@ function App() {
                       <div key={item.text} className="flex gap-3 leading-7">
                         <Icon className="mt-1 h-5 w-5 shrink-0 text-sky-700" />
                         {item.href ? (
-                          <a href={item.href} className="whitespace-pre-line transition hover:text-sky-700 hover:underline">
+                          <a
+                            href={item.href}
+                            onClick={(event) => handleContactLinkClick(event, item.href)}
+                            className="whitespace-pre-line transition hover:text-sky-700 hover:underline"
+                          >
                             {item.text}
                           </a>
                         ) : (
