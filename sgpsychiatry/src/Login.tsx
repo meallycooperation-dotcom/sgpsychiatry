@@ -3,7 +3,7 @@ export default function Login() {
     const configuredLoginUrl = import.meta.env.VITE_OPENEMR_LOGIN_URL
     if (configuredLoginUrl) return configuredLoginUrl
 
-    return 'https://portal.sgpsychiatry.com'
+    return 'https://portal.sgpsychiatry.com/portal'
   })()
 
   const staffPortalUrl = import.meta.env.VITE_STAFF_PORTAL_URL || 'https://ehr.sgpsychiatry.com'

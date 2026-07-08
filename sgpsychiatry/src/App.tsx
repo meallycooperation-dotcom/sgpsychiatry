@@ -546,14 +546,14 @@ function App() {
 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
-                    href="https://portal.sgpsychiatry.com"
+                    href="https://portal.sgpsychiatry.com/portal"
                     className="inline-flex items-center gap-2 rounded-full bg-sky-700 px-6 py-3 font-semibold text-white transition hover:bg-sky-800"
                   >
                     <CalendarCheck2 className="h-5 w-5" />
                     Schedule via Portal
                   </a>
                   <a
-                    href="https://portal.sgpsychiatry.com"
+                    href="https://portal.sgpsychiatry.com/portal"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 font-semibold text-slate-700 transition hover:border-sky-700 hover:text-sky-700"
                   >
                     <FileSignature className="h-5 w-5" />
