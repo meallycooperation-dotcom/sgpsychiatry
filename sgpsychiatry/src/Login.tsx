@@ -3,12 +3,10 @@ export default function Login() {
     const configuredLoginUrl = import.meta.env.VITE_OPENEMR_LOGIN_URL
     if (configuredLoginUrl) return configuredLoginUrl
 
-    const openEmrBase = import.meta.env.VITE_OPENEMR_URL || 'http://localhost/openemr-8.0.0'
-    const redirectTo = typeof window !== 'undefined' ? `${window.location.origin}/portal` : '/portal'
-    return `${openEmrBase}/portal?redirect=${encodeURIComponent(redirectTo)}`
+    return 'https://portal.sgpsychiatry.com'
   })()
 
-  const staffPortalUrl = 'http://localhost/openemr-8.0.0'
+  const staffPortalUrl = import.meta.env.VITE_STAFF_PORTAL_URL || 'https://ehr.sgpsychiatry.com'
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50">

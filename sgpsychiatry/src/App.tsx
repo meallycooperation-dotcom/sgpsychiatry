@@ -231,7 +231,7 @@ function App() {
                 <Brain className="h-6 w-6" />
               </span>
               <div>
-                <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
+                <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
                   SGPsychiatry
                 </h1>
                 <p className="text-sm text-slate-500">Patient Portal</p>
@@ -430,7 +430,7 @@ function App() {
                 Adult Psychiatry & Wellness
               </h1>
               <p className="mb-8 max-w-xl text-lg leading-8 text-slate-700">
-                Compassionate, evidence-based mental health care for adults. We provide treatment for anxiety, depression, bipolar disorder, schizophrenia, PTSD, trauma, ADHD, and related mental health concerns through in-person and telepsychiatry care.
+                Compassionate, evidence-based mental health care for adults. We provide treatment for anxiety, depression, bipolar disorder, schizophrenia, PTSD, trauma, and related mental health concerns through in-person and telepsychiatry care.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -459,7 +459,7 @@ function App() {
             <div className="mb-8">
               <h2 className="text-3xl font-semibold text-slate-900">About</h2>
               <p className="mt-4 max-w-4xl text-lg leading-8 text-slate-700">
-                Dr. Sammy Gathiru, DNP, PMHNP is a Board-Certified Psychiatric Mental Health Nurse Practitioner who provides a comprehensive approach to mental health treatment by incorporating psychopharmacology, psychotherapy, and alternative treatment modalities to best address your concern. Each treatment plan is tailored to fit the individual and to help clients understand their diagnosis and options.
+                Dr. Sammy Gathiru, DNP, PMHNP-BC is a Board-Certified Psychiatric Mental Health Nurse Practitioner who provides a comprehensive approach to mental health treatment by incorporating psychopharmacology, psychotherapy, and alternative treatment modalities to best address your concern. Each treatment plan is tailored to fit the individual and to help clients understand their diagnosis and options.
               </p>
             </div>
 
@@ -546,14 +546,14 @@ function App() {
 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <a
-                    href="http://localhost:3001/login"
+                    href="https://portal.sgpsychiatry.com"
                     className="inline-flex items-center gap-2 rounded-full bg-sky-700 px-6 py-3 font-semibold text-white transition hover:bg-sky-800"
                   >
                     <CalendarCheck2 className="h-5 w-5" />
                     Schedule via Portal
                   </a>
                   <a
-                    href="http://localhost:3001/#"
+                    href="https://portal.sgpsychiatry.com"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 font-semibold text-slate-700 transition hover:border-sky-700 hover:text-sky-700"
                   >
                     <FileSignature className="h-5 w-5" />
