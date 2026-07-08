@@ -422,7 +422,7 @@ function App() {
             <img
               src={heroImage}
               alt="Psychiatry clinic in Lakewood, Washington"
-              className="h-full w-full object-cover opacity-5 mix-blend-multiply"
+              className="h-full w-full object-cover opacity-15 mix-blend-multiply"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-sky-100/25 via-sky-50/10 to-transparent" />
           </div>
