@@ -70,8 +70,8 @@ const services = [
 
 const contactItems = [
   { icon: MapPin, text: '6212 75th St W, Lakewood, WA 98499' },
-  { icon: PhoneCall, text: '(253) 878-9211' },
-  { icon: Mail, text: 'info@sgpsychiatry.com' },
+  { icon: PhoneCall, text: '(253) 878-9211', href: 'tel:+12538789211' },
+  { icon: Mail, text: 'info@sgpsychiatry.com', href: 'mailto:info@sgpsychiatry.com' },
   { icon: Clock3, text: 'Monday - Thursday\n9:00 am to 5:00 pm' },
   { icon: Video, text: 'Telehealth available' },
 ]
@@ -230,11 +230,11 @@ function App() {
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-sky-700">
                 <Brain className="h-6 w-6" />
               </span>
-              <div>
+              <div className="flex flex-col items-center text-center">
                 <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
                   SGPsychiatry
                 </h1>
-                <p className="text-sm text-slate-500">Patient Portal</p>
+                <p className="text-sm text-slate-500">login Portal</p>
               </div>
             </a>
             <a href="/" onClick={handleLogoutClick} className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-sky-700 hover:text-sky-700">
@@ -382,7 +382,7 @@ function App() {
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-sky-700">
               <Brain className="h-6 w-6" />
             </span>
-            <div>
+            <div className="flex flex-col items-center text-center">
               <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
                 SGPsychiatry
               </h1>
@@ -439,14 +439,7 @@ function App() {
                   className="inline-flex items-center gap-2 rounded-full bg-sky-700 px-6 py-3 font-semibold text-white shadow-lg shadow-sky-700/20 transition hover:bg-sky-800"
                 >
                   <LogIn className="h-5 w-5" />
-                  Patient Portal
-                </a>
-                <a
-                  href="tel:+12538789211"
-                  className="inline-flex items-center gap-2 rounded-full border border-sky-700 px-6 py-3 font-semibold text-sky-800 transition hover:bg-sky-700 hover:text-white"
-                >
-                  <PhoneCall className="h-5 w-5" />
-                  (253) 878-9211
+                  login Portal
                 </a>
               </div>
             </div>
@@ -538,7 +531,13 @@ function App() {
                     return (
                       <div key={item.text} className="flex gap-3 leading-7">
                         <Icon className="mt-1 h-5 w-5 shrink-0 text-sky-700" />
-                        <span className="whitespace-pre-line">{item.text}</span>
+                        {item.href ? (
+                          <a href={item.href} className="whitespace-pre-line transition hover:text-sky-700 hover:underline">
+                            {item.text}
+                          </a>
+                        ) : (
+                          <span className="whitespace-pre-line">{item.text}</span>
+                        )}
                       </div>
                     )
                   })}
