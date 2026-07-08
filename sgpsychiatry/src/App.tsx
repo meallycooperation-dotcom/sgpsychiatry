@@ -15,10 +15,10 @@ import {
   UserCircle2,
   Video,
 } from 'lucide-react'
-import consultingImage from './assets/doc1.jpg'
+import consultingImage from './assets/doc1_converted.webp'
 import heroImage from './assets/images.jpg'
 import financialImage from './assets/image_converted.webp'
-import processImage from './assets/hero.png'
+import processImage from './assets/proce_converted.webp'
 import Login from './Login'
 import Profile from './pages/dashboard/Profile/index'
 import DashboardPage from './pages/dashboard/Dashboard/index'
@@ -422,6 +422,9 @@ function App() {
             <img
               src={heroImage}
               alt="Psychiatry clinic in Lakewood, Washington"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-full w-full object-cover opacity-15 mix-blend-multiply"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-sky-100/25 via-sky-50/10 to-transparent" />
